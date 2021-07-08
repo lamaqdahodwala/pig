@@ -4,8 +4,9 @@
 	let r1, r2, r3, r4, r5 = 0;
 	let last_roll = 0;
 	let round = 1
-	
+	var game_ended = false;
 	function end_game(){
+		game_ended = true
 		alert("You win")
 	}
 
@@ -46,8 +47,8 @@
 					<h1 class="subtitle">Possible points: {pts_this_round}</h1>
 					<h1 class="subtitle">Last roll: {last_roll}</h1>
 					<div class="is-flex is-justify-content-center is-flex-direction-row">
-						<button class="button is-primary mx-3" on:click={roll}>Roll</button>
-						<button class="button is-info mx-3" on:click={next_round}>End round</button>
+						<button class="button is-primary mx-3 "  disabled={game_ended} on:click={roll}>Roll</button>
+						<button class="button is-info mx-3 " disabled={game_ended} on:click={next_round}>End round</button>
 					</div>
 				</div>
 			</div>
