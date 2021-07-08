@@ -6,20 +6,24 @@
 	let round = 1
 	
 	function end_game(){
-	
+		alert("You win")
 	}
 
 	function next_round(){
+		if (round == 5){
+			return end_game()
+		}
 		total += pts_this_round
 		last_roll = 0
 		pts_this_round = 0
-		alert("next round")
+		round += 1
 	}
 
 	function roll(){
 		let r = Math.ceil(Math.random() * 6)
 		if (r == 6){ 
 			pts_this_round = 0
+			alert("You rolled a 6!")
 			return next_round()
 		}
 		last_roll = r
@@ -39,7 +43,7 @@
 				<div class="box">
 					<h1 class="title">Round #{round}</h1>
 					<h1 class="subtitle">Total score: {total}</h1>
-					<h1 class="subtitle">Possible points: {total + pts_this_round}</h1>
+					<h1 class="subtitle">Possible points: {pts_this_round}</h1>
 					<h1 class="subtitle">Last roll: {last_roll}</h1>
 					<div class="is-flex is-justify-content-center is-flex-direction-row">
 						<button class="button is-primary mx-3" on:click={roll}>Roll</button>
