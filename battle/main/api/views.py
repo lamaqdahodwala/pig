@@ -17,4 +17,4 @@ class GetAllSubmissionsView(APIView):
     def get(self, req):
         subs = Submission.objects.all()
         ser = SubmissionSerializer(subs, many=True)
-        return ser.data
+        return Response(ser.data)
