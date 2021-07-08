@@ -7,21 +7,28 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Submission',
+            name="Submission",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('total', models.IntegerField()),
-                ('r1', models.IntegerField()),
-                ('r2', models.IntegerField()),
-                ('r3', models.IntegerField()),
-                ('r4', models.IntegerField()),
-                ('r5', models.IntegerField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("total", models.IntegerField()),
+                ("r1", models.IntegerField()),
+                ("r2", models.IntegerField()),
+                ("r3", models.IntegerField()),
+                ("r4", models.IntegerField()),
+                ("r5", models.IntegerField()),
             ],
         ),
     ]
