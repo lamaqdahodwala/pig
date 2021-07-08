@@ -15,8 +15,26 @@
 	}
 
 
+	function getCookie(name) {
+ 		var cookieValue = null;
+		if (document.cookie && document.cookie !== '') {
+		    var cookies = document.cookie.split(';');
+		    for (var i = 0; i < cookies.length; i++) {
+		        var cookie = cookies[i].trim();
+		        // Does this cookie string begin with the name we want?
+		        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		            break;
+		        }
+		    }
+		}
+		return cookieValue;
+	}
+
+
 	async function submit_score_to_leaderboard(){
 		let n = prompt('The name to be posted on the leaderboard:')
+		let csrf_token = getCookie('csrftoken')
 		let data = {
 			"name": n,
 			"total": total,
@@ -27,13 +45,21 @@
 			"r5": r5,
 			
 		}
-		let res = await fetch('/api/submit', {
+		let res = await fetch('/api/v1/submit', {
 			method: "POST",
 			mode: "cors",
+			headers: {
+				'content-type': 'application/json',
+				'X-CSRFToken': csrf_token
+			},
 			cache: "no-cache",
 			credentials: 'same-origin',
 			body: JSON.stringify(data)
 		})
+	}
+
+	function send_request(){
+		submit_Promise = submit_score_to_leaderboard()
 	}
 
 
@@ -76,6 +102,7 @@
 		last_roll = r
 		pts_this_round += r
 	}
+	let submit_Promise = submit_score_to_leaderboard
 </script>
 <br><br>
 <main>
@@ -115,7 +142,7 @@
 			<div class="has-text-centered">
 				<h1 class="title">Woohoo!</h1>
 				<h3 class="subtitle">Your final score was {total}</h3>
-				<button class="button is-primary">Submit your score to leaderboards</button>
+				<button class="button is-primary" on:click={send_request}>Submit your score to leaderboards</button>
 			</div>
 		{/if}
 	</div>
