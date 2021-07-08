@@ -6,7 +6,7 @@
 	let r3 = 0
 	let r4 = 0
 	let r5 = 0
-
+	let submitted = false;
 	let last_roll = 0;
 	let round = 1
 	var game_ended = false;
@@ -60,6 +60,7 @@
 
 	function send_request(){
 		submit_Promise = submit_score_to_leaderboard()
+		submitted = true
 	}
 
 
@@ -142,7 +143,7 @@
 			<div class="has-text-centered">
 				<h1 class="title">Woohoo!</h1>
 				<h3 class="subtitle">Your final score was {total}</h3>
-				<button class="button is-primary" on:click={send_request}>Submit your score to leaderboards</button>
+				<button class="button is-primary" on:click={send_request} disabled={submitted}>Submit your score to leaderboards</button>
 				<div class="has-text-centered">
 				</div>
 			</div>
