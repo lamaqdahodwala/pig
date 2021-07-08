@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+<div class="contaienr">
+    {% for i in lst %} 
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-header-title title">{{i.total}}, scored by {{i.name}}</h1>
+            </div>
+            <div class="card-body">
+                <div class="content">
+                    <ul>
+                        <li>Round 1: {{i.r1}}</li>
+                        <li>Round 2: {{i.r2}}</li>
+                        <li>Round 3: {{i.r3}}</li>
+                        <li>Round 4: {{i.r4}}</li>
+                        <li>Round 5: {{i.r5}}</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %} 
+</div>
+{% endblock %} 
