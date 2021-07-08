@@ -7,7 +7,6 @@
 	var game_ended = false;
 	function end_game(){
 		game_ended = true
-		alert("You win")
 	}
 
 	function next_round(){
@@ -58,5 +57,11 @@
 				</div>
 			</div>
 		</div>
+		{#if game_ended}
+			<div class="has-text-centered">
+				<h1 class="title">Woohoo!</h1>
+				<h3 class="subtitle">Your final score was {total}</h3>
+			</div>
+		{/if}
 	</div>
 </main>
