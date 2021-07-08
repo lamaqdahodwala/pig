@@ -1,5 +1,5 @@
-from battle.main.models import Submission
 from .serializers import SubmissionSerializer
+from ..models import Submission
 from rest_framework.views import APIView
 from rest_framework.status import HTTP_201_CREATED
 from rest_framework.response import Response
