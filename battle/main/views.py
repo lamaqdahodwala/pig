@@ -12,3 +12,6 @@ def leaderboard_view(req):
 
 def index(req):
     return render(req, 'index.html')
+
+def how_to_play(req):
+    return render(req, 'how_to_play.html')

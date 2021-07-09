@@ -12,6 +12,10 @@
         <p>Each play you can choose to roll the dice or end the round yourself. If you roll a 6 at any time, you get 0 points for the round and the round is over. Otherwise, the roll is added to your points this round. If you end the round yourself, you safely deposit your points and the next round begins
 
         </p>
+        <div class="is-flex is-justify-content-center is-flex-direction-row">
+            <a href="{% url 'game' %}" class="button is-primary mx-3">Play now</a>
+            <a href="{% url 'leaderboard' %}" class='button is-info mx-3'>Leaderboards</a>
+        </div>
     </div>
 </div>
 {% endblock %} 
