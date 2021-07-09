@@ -121,7 +121,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="column">
+			<div class="column is-8">
 				<div class="box">
 					<h1 class="title">Round #{round}</h1>
 					<h1 class="subtitle">Total score: {total}</h1>
