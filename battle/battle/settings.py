@@ -125,6 +125,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+STATIC_ROOT = str(BASE_DIR.joinpath('static'))
+
 STATICFILES_DIRS = [str(BASE_DIR.parent / "svelte" / "public" / "build")]
 
 # Default primary key field type
