@@ -133,11 +133,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="column">
-				<div class="box">
-					<h1 class="title">Current Round</h1>
-				</div>
-			</div>
 		</div>
 		{#if game_ended}
 			<div class="has-text-centered">
