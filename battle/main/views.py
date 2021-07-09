@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Submission
 
 # Create your views here.
-def index(req):
+def game(req):
     return render(req, "index.html")
 
 
