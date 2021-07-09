@@ -1,16 +1,19 @@
 {% extends 'base.html' %} 
 
 {% block content %} 
+<br><br>
 <div class="container">
     <div class="has-text-centered">
         <h1 class="title">Pig</h1>
         <h1 class="subtitle">A game about risk and reward</h1>
     </div>
-    <div class="is-flex-is-justify-content-center is-flex-direction-row">
-        <div class="buttons">
-            <a href="{% url 'game' %}" class="button is-primary">Play now</a>
-            <a href="{% url 'leaderboard' %}" class='button is-info'>Leaderboards</a>
-        </div>
+    <hr>
+    <div class="is-flex is-justify-content-center is-flex-direction-row">
+            <div class="buttons">
+                <a href="{% url 'game' %}" class="button is-primary">Play now</a>
+                <a href="{% url 'leaderboard' %}" class='button is-info'>Leaderboards</a>
+                <a href="{% url 'howtoplay' %}" class='button is-dark'>Not sure how to play?</a>
+            </div>
     </div>
 </div>
 {% endblock %} 
