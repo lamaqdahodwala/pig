@@ -25,10 +25,7 @@ SECRET_KEY = "django-insecure-zc$p#5bs=!*-_30s==$b8!-8--1#5)b)no3ni9b-i(!9u@(k-%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    "pig.lamaqdahodwala.repl.co",
-    '127.0.0.1'
-]
+ALLOWED_HOSTS = ["pig.lamaqdahodwala.repl.co", "127.0.0.1"]
 
 
 # Application definition
@@ -47,7 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -126,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-STATIC_ROOT = str(BASE_DIR.joinpath('static'))
+STATIC_ROOT = str(BASE_DIR.joinpath("static"))
 
 STATICFILES_DIRS = [str(BASE_DIR.parent / "svelte" / "public" / "build")]
 
