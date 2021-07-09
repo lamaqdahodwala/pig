@@ -139,8 +139,10 @@
 				<h1 class="title">Woohoo!</h1>
 				<h3 class="subtitle">Your final score was {total}</h3>
 				<button class="button is-primary" on:click={send_request} disabled={submitted}>Submit your score to leaderboards</button>
-				<div class="has-text-centered">
-				</div>
+				<br><br>
+				{#if submitted}
+					<a href="/leaderboard">View leaderboards</a>
+				{/if}
 			</div>
 		{/if}
 	</div>
